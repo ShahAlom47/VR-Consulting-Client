@@ -24,7 +24,7 @@ const Navbar = () => {
                     {nav}
 
                 </div>
-                <div className="p-2 border rounded-lg">
+                <div className="p-2 border rounded-lg bg-[#0b0a0ac2] ">
 
                 </div>
                
