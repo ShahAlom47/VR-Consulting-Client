@@ -4,9 +4,12 @@ import './index.css'
 
 import router from './Routes/MainRoutes'
 import { RouterProvider } from 'react-router/dom'
+import { PageMetricsProvider } from './Provider/PageMetricsProvider'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-        <RouterProvider router={router} />
+    <PageMetricsProvider>
+      <RouterProvider router={router} />
+    </PageMetricsProvider>
   </React.StrictMode>,
 )

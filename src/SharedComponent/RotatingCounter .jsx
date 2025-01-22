@@ -1,6 +1,8 @@
 import PropTypes from "prop-types"
 
 const RotatingCounter = ({ value }) => {
+
+    
   if (!Number.isInteger(value) || value < 0 || value > 9999) {
     console.error("Value must be an integer between 0 and 9999.");
     return null; // Do not render if the value is invalid

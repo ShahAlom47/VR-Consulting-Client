@@ -6,9 +6,18 @@ import usePageMetrics from "../CustomHocks/usePageMetrics";
 
 
 const Navbar = () => {
-    const { screenWidth, scrollPosition, totalPageHeight }= usePageMetrics()
 
-    console.log(screenWidth, scrollPosition, totalPageHeight);
+    const {screenWidth,
+        scrollPosition,
+        totalPageHeight,
+        homeComponentHeight,} = usePageMetrics()
+
+        
+        console.log(screenWidth,
+            scrollPosition,
+            totalPageHeight,
+            homeComponentHeight);
+  
 
 
     const nav = [
