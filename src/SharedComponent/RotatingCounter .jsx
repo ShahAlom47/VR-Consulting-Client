@@ -36,7 +36,7 @@ const RotatingCounter = () => {
   console.log(value, formattedValue,  digits);
 
   return (
-    <div className="flex space-x-0 text-3xl">
+    <div className="flex space-x-0 text-3xl font-extrabold  ">
       {digits.map((digit, index) => (
         <div 
          key={index} 
@@ -53,7 +53,7 @@ const RotatingCounter = () => {
               {[...Array(10).keys()].map((num) => (
                 <span
                   key={num}
-                  className="text-3xl font-bold h-10 flex gap-0  items-center justify-center "
+                  className=" h-10 flex gap-0  items-center justify-center "
                 >
                   {num}
                 </span>

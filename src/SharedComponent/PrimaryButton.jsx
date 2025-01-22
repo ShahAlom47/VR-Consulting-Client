@@ -3,7 +3,7 @@ const PrimaryButton = ({ children }) => {
     return (
         <button
             type="button"
-            className="bg-[#ff891d] rounded-lg p-2 px-3 text-black overflow-hidden relative group h-10 w-28"
+            className="bg-[#ff891d] rounded-lg p-2 px-3 text-black overflow-hidden relative group h-12 w-28"
         >
             {/* Top Text */}
             <span

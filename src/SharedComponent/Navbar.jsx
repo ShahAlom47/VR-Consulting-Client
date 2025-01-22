@@ -22,8 +22,8 @@ const Navbar = () => {
 
 
     return (
-        <div className="  p-2  my-4    w-full fixed ">
-            <div className=" mx-auto max-w-lg  flex gap-4 ">
+        <div className="  p-2  my-4    w-full fixed z-40 ">
+            <div className=" mx-auto max-w-xl  flex gap-4 ">
                 <div className="p-1 border-[1px] border-gray-600 rounded-xl flex-1 bg-[#0b0a0ac2] flex gap-2 justify-between  items-center text-white font-semibold">
                     {nav}
 
