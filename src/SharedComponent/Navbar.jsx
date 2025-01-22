@@ -1,9 +1,16 @@
 import { NavLink } from "react-router";
 import logo from '../Accets/Images/logo.png'
 import PrimaryButton from "./PrimaryButton";
+import RotatingCounter from "./RotatingCounter ";
+import usePageMetrics from "../CustomHocks/usePageMetrics";
 
 
 const Navbar = () => {
+    const { screenWidth, scrollPosition, totalPageHeight }= usePageMetrics()
+
+    console.log(screenWidth, scrollPosition, totalPageHeight);
+
+
     const nav = [
 
        
@@ -25,6 +32,7 @@ const Navbar = () => {
 
                 </div>
                 <div className="p-2 border rounded-lg bg-[#0b0a0ac2] ">
+                    <RotatingCounter value={5}></RotatingCounter>
 
                 </div>
                
