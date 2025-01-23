@@ -33,7 +33,6 @@ const RotatingCounter = () => {
 
   // Split the formatted value into digits
   const digits = formattedValue.split("");
-  console.log(value, formattedValue,  digits);
 
   return (
     <div className="flex space-x-0 text-3xl font-extrabold  ">

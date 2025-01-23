@@ -7,3 +7,5 @@ const usePageMetrics = () => {
 };
 
 export default usePageMetrics;
+
+//   screenWidth,scrollPosition,totalPageHeight,homeComponentHeight,homeRef

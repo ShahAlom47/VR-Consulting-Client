@@ -8,8 +8,10 @@ export const PageMetricsProvider = ({ children }) => {
   const [scrollPosition, setScrollPosition] = useState(window.scrollY);
   const [totalPageHeight, setTotalPageHeight] = useState(document.documentElement.scrollHeight);
   const [homeComponentHeight, setHomeComponentHeight] = useState(0);
+  const [aboutComponentHeight, setAboutComponentHeight] = useState(0);
 
   const homeRef = useRef(null); 
+  const aboutRef = useRef(null); 
 
   useEffect(() => {
     const handleResize = () => {
@@ -27,13 +29,24 @@ export const PageMetricsProvider = ({ children }) => {
         setHomeComponentHeight(homeRef.current.getBoundingClientRect().height);
       }
     };
+    const updateAboutHeight = () => {
+      if (homeRef.current) {
+        setAboutComponentHeight(aboutRef.current.getBoundingClientRect().height);
+      }
+    };
 
     updateHomeHeight();
+    updateAboutHeight()
 
   
     const observer = new ResizeObserver(updateHomeHeight);
+    const observerAbout = new ResizeObserver(updateAboutHeight);
+
     if (homeRef.current) {
       observer.observe(homeRef.current);
+    }
+    if (aboutRef.current) {
+      observerAbout.observe(aboutRef.current);
     }
 
     window.addEventListener("resize", handleResize);
@@ -45,6 +58,9 @@ export const PageMetricsProvider = ({ children }) => {
       if (homeRef.current) {
         observer.unobserve(homeRef.current);
       }
+      if (aboutRef.current) {
+        observerAbout.unobserve(aboutRef.current);
+      }
     };
   }, []);
 
@@ -55,7 +71,9 @@ export const PageMetricsProvider = ({ children }) => {
         scrollPosition,
         totalPageHeight,
         homeComponentHeight,
+        aboutComponentHeight,
         homeRef,
+        aboutRef,
       }}
     >
       {children}
