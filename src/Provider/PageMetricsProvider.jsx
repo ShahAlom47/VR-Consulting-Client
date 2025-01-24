@@ -1,6 +1,6 @@
-import  { createContext, useState, useEffect, useRef } from "react";
+import { createContext, useState, useEffect, useRef } from "react";
 
-export  const PageMetricsContext = createContext();
+export const PageMetricsContext = createContext();
 
 // eslint-disable-next-line react/prop-types
 export const PageMetricsProvider = ({ children }) => {
@@ -9,58 +9,56 @@ export const PageMetricsProvider = ({ children }) => {
   const [totalPageHeight, setTotalPageHeight] = useState(document.documentElement.scrollHeight);
   const [homeComponentHeight, setHomeComponentHeight] = useState(0);
   const [aboutComponentHeight, setAboutComponentHeight] = useState(0);
+  const [supportComponentHeight, setSupportComponentHeight] = useState(0);
 
-  const homeRef = useRef(null); 
-  const aboutRef = useRef(null); 
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const supportRef = useRef(null);
 
   useEffect(() => {
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
       setTotalPageHeight(document.documentElement.scrollHeight);
-      updateHomeHeight();
+      updateHeights();
     };
 
     const handleScroll = () => {
       setScrollPosition(window.scrollY);
     };
 
-    const updateHomeHeight = () => {
+    const updateHeights = () => {
       if (homeRef.current) {
         setHomeComponentHeight(homeRef.current.getBoundingClientRect().height);
       }
-    };
-    const updateAboutHeight = () => {
-      if (homeRef.current) {
+      if (aboutRef.current) {
         setAboutComponentHeight(aboutRef.current.getBoundingClientRect().height);
+      }
+      if (supportRef.current) {
+        setSupportComponentHeight(supportRef.current.getBoundingClientRect().height);
       }
     };
 
-    updateHomeHeight();
-    updateAboutHeight()
+    const observer = new ResizeObserver(updateHeights);
 
-  
-    const observer = new ResizeObserver(updateHomeHeight);
-    const observerAbout = new ResizeObserver(updateAboutHeight);
-
-    if (homeRef.current) {
-      observer.observe(homeRef.current);
-    }
-    if (aboutRef.current) {
-      observerAbout.observe(aboutRef.current);
-    }
+    if (homeRef.current) observer.observe(homeRef.current);
+    if (aboutRef.current) observer.observe(aboutRef.current);
+    if (supportRef.current) observer.observe(supportRef.current);
 
     window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", handleScroll);
 
+    // Initial height calculation
+    updateHeights();
+
     return () => {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("scroll", handleScroll);
-      if (homeRef.current) {
-        observer.unobserve(homeRef.current);
-      }
-      if (aboutRef.current) {
-        observerAbout.unobserve(aboutRef.current);
-      }
+
+      if (homeRef.current) observer.unobserve(homeRef.current);
+      if (aboutRef.current) observer.unobserve(aboutRef.current);
+      if (supportRef.current) observer.unobserve(supportRef.current);
+
+      observer.disconnect();
     };
   }, []);
 
@@ -72,13 +70,13 @@ export const PageMetricsProvider = ({ children }) => {
         totalPageHeight,
         homeComponentHeight,
         aboutComponentHeight,
+        supportComponentHeight,
         homeRef,
         aboutRef,
+        supportRef,
       }}
     >
       {children}
     </PageMetricsContext.Provider>
   );
 };
-
-

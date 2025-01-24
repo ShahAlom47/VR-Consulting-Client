@@ -124,14 +124,8 @@ const AboutOurWork = () => {
 
                     {/* Rotating Main Image */}
                     <div
-                        className="col-span-3 flex items-center justify-center relative overflow-hidde bb"
-                        // style={{
-                        //     transform: calculateRotation(),
-                        //     backgroundImage: `url(${main})`,
-                        //     backgroundSize: "cover",
-                        //     width: "100%",
-                        //     height: "100%",
-                        // }}
+                        className="col-span-3 flex items-center justify-center relative overflow-hidden bb"
+                   
                     >
                         <div className=" rounded-full  p-3 absolute   inset-0   w-[1600px] h-[1700px]"
                          style={{
