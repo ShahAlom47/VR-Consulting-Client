@@ -124,7 +124,7 @@ const AboutOurWork = () => {
 
                     {/* Rotating Main Image */}
                     <div
-                        className="col-span-3 flex items-center justify-center relative overflow-hidden bb"
+                        className="col-span-3 flex items-center justify-center relative overflow-hidde bb"
                         // style={{
                         //     transform: calculateRotation(),
                         //     backgroundImage: `url(${main})`,
@@ -133,13 +133,13 @@ const AboutOurWork = () => {
                         //     height: "100%",
                         // }}
                     >
-                        <div className=" rounded-full bb p-3 absolute   inset-0 top-[25%] right- flex justify-center items-center w-[1200px] h-[1200px]"
+                        <div className=" rounded-full  p-3 absolute   inset-0   w-[1600px] h-[1700px]"
                          style={{
                             transform: calculateRotation(),
                             // backgroundImage: `url(${main})`,
                             backgroundSize: "cover",
                         }}>
-                            <img  className="w-full h-full -top-30 right-32 absolute  -rotate-90 bb rounded-full" src={main} alt="" />
+                            <img  className="w-[200%] h-full  absolute  -rotate  rounded-full" src={main} alt="" />
                         </div>
                     </div>
                 </div>
