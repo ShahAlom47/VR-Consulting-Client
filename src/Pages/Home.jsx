@@ -13,15 +13,6 @@ const Home = () => {
             <Banner> </Banner> 
             <AboutOurWork></AboutOurWork>
             <SupportSec></SupportSec>
-            <div className="min-h-screen bb mb-3"></div>
-            <div className="min-h-screen bb mb-3"></div>
-            <div className="min-h-screen bb mb-3"></div>
-            <div className="min-h-screen bb mb-3"></div>
-            <div className="min-h-screen bb mb-3"></div>
-            <div className="min-h-screen bb mb-3"></div>
-            <div className="min-h-screen bb mb-3"></div>
-            <div className="min-h-screen bb mb-3"></div>
-            <div className="min-h-screen bb mb-3"></div>
 
         </div>
     );
