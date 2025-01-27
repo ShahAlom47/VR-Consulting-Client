@@ -6,9 +6,10 @@ const AboutOurWork = () => {
     const { aboutRef, aboutComponentHeight } = usePageMetrics();
     const [scrollPosition, setScrollPosition] = useState(0);
     const [currentSectionPercent, setCurrentSectionPercent] = useState(0);
-    const currentPercent = currentSectionPercent.toFixed(2);
     const [currentContentIndex, setCurrentContentIndex] = useState(0);
     const [isFading, setIsFading] = useState(false);
+
+    // console.log(currentSectionPercent);
 
     const contents = [
         {
