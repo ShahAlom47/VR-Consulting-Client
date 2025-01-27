@@ -11,7 +11,7 @@ const SupportSec = () => {
   // Total number of sections
   const sections = 3;
 
-  console.log(currentContentIndex);
+  // console.log(currentContentIndex);
   // Handle scroll and calculate position
   useEffect(() => {
     const handleScroll = () => {
