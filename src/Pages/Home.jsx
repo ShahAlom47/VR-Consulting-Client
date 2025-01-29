@@ -15,6 +15,9 @@ const Home = () => {
             <AboutOurWork></AboutOurWork>
             <SupportSec></SupportSec>
             <MissionSec></MissionSec>
+            <SupportSec></SupportSec>
+
+         
 
         </div>
     );
