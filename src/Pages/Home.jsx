@@ -16,7 +16,7 @@ const Home = () => {
             <AboutOurWork></AboutOurWork>
             <SupportSec></SupportSec>
             <MissionSec></MissionSec>
-            <Commitment></Commitment>
+            {/* <Commitment></Commitment> */}
 
          
 

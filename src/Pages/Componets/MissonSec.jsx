@@ -6,7 +6,6 @@ const MissionSec = () => {
     const [currentScroll, setCurrentScroll] = useState(0);
     const [leftPositions, setLeftPositions] = useState(0); // Initial left position
     const [iconOpacity, setIconOpacity] = useState(1); 
-    console.log(currentScroll);
 
 
     useEffect(() => {
@@ -61,7 +60,7 @@ const MissionSec = () => {
             </div>
 
             {/* Section 2: Content and Icon */}
-            <div className={`absolute w-full h-full bg-black transition-all duration-500 ${currentScroll >= 0.31 &&currentScroll <1.00 ? "opacity-100 z-40" : "opacity-0 z-0"}`}>
+            <div className={`absolute w-full h-full bg-black transition-all duration-500 ${currentScroll >= 0.31  ? "opacity-100 z-40" : "opacity-0 z-0"}`}>
                 {/* Moving Icon */}
                 <div className="relative w-full overflow-hidden">
                     <SiChessdotcom
